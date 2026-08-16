@@ -1,4 +1,4 @@
-import { Search, Eye, Filter } from "lucide-react";
+import { Search, Eye } from "lucide-react";
 
 export default function AdminApplicationsPage() {
   return (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { InstallmentCalculator } from "@/components/calculator/InstallmentCalculator";
 import { CheckCircle2 } from "lucide-react";
 
@@ -28,12 +29,12 @@ export default function InstallmentsPage() {
           <p className="text-gray-600 mb-8 leading-relaxed">
             Thank you. Your request has been received. Our team will review your application and contact you shortly regarding the available options.
           </p>
-          <button 
-            onClick={() => window.location.href = '/'} 
-            className="bg-navy hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+          <Link 
+            href="/"
+            className="inline-block bg-navy hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
           >
             Return to Homepage
-          </button>
+          </Link>
         </div>
       </div>
     );
@@ -251,7 +252,7 @@ export default function InstallmentsPage() {
               <ul className="space-y-3 text-sm text-gray-300 mt-4">
                 <li className="flex items-start"><span className="text-electric-blue mr-2">1.</span> Submit this form online.</li>
                 <li className="flex items-start"><span className="text-electric-blue mr-2">2.</span> Our team will review the details.</li>
-                <li className="flex items-start"><span className="text-electric-blue mr-2">3.</span> We'll contact you with options.</li>
+                <li className="flex items-start"><span className="text-electric-blue mr-2">3.</span> We&apos;ll contact you with options.</li>
                 <li className="flex items-start"><span className="text-electric-blue mr-2">4.</span> Visit branch for final process.</li>
               </ul>
             </div>

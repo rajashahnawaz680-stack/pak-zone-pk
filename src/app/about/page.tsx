@@ -28,7 +28,7 @@ export default function AboutPage() {
               <div className="bg-electric-blue/10 border-l-4 border-electric-blue p-6 rounded-r-lg mt-8">
                 <h3 className="font-bold text-navy text-xl mb-2">Our Goal Is Simple:</h3>
                 <p className="text-electric-blue font-medium italic">
-                  "Make it easier for customers to access the products they need through convenient purchasing options and dependable customer support."
+                  &quot;Make it easier for customers to access the products they need through convenient purchasing options and dependable customer support.&quot;
                 </p>
               </div>
             </div>

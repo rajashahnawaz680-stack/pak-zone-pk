@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Search, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 export default function ProductRequestPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -22,12 +23,12 @@ export default function ProductRequestPage() {
           <p className="text-gray-600 mb-8 leading-relaxed">
             Thank you. Your product request has been submitted. Our team will review the details and contact you shortly regarding availability and options.
           </p>
-          <button 
-            onClick={() => window.location.href = '/'} 
-            className="bg-navy hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+          <Link 
+            href="/"
+            className="inline-block bg-navy hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
           >
             Return to Homepage
-          </button>
+          </Link>
         </div>
       </div>
     );
@@ -42,7 +43,7 @@ export default function ProductRequestPage() {
             <div className="w-20 h-20 bg-electric-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <Search className="w-10 h-10 text-electric-blue" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-navy mb-4">Can't Find What You're Looking For?</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-navy mb-4">Can&apos;t Find What You&apos;re Looking For?</h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Tell us what product you are looking for and our team can review your request and help you get it through cash or available installment options.
             </p>
