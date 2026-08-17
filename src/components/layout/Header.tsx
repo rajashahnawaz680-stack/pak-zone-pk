@@ -20,8 +20,7 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-6">
           <Link href="/" className="hover:text-electric-blue transition-colors text-sm font-medium">Home</Link>
-          <Link href="/shop" className="hover:text-electric-blue transition-colors text-sm font-medium">Shop</Link>
-          <Link href="/categories" className="hover:text-electric-blue transition-colors text-sm font-medium">Categories</Link>
+          <Link href="/what-we-offer" className="hover:text-electric-blue transition-colors text-sm font-medium">What We Offer</Link>
           <Link href="/installments" className="hover:text-electric-blue transition-colors text-sm font-medium">Installments</Link>
           <Link href="/how-it-works" className="hover:text-electric-blue transition-colors text-sm font-medium">How It Works</Link>
           <Link href="/about" className="hover:text-electric-blue transition-colors text-sm font-medium">About Us</Link>
@@ -56,8 +55,7 @@ export function Header() {
         <div className="lg:hidden bg-navy border-t border-gray-800">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <Link href="/" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-            <Link href="/shop" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Shop</Link>
-            <Link href="/categories" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Categories</Link>
+            <Link href="/what-we-offer" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>What We Offer</Link>
             <Link href="/installments" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Installments</Link>
             <Link href="/how-it-works" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>How It Works</Link>
             <Link href="/about" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>

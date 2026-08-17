@@ -21,11 +21,11 @@ export default function AdminLayout({
           </Link>
           <Link href="/admin/products" className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
             <Package className="w-5 h-5" />
-            <span>Products</span>
+            <span>Creatives</span>
           </Link>
           <Link href="/admin/applications" className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
             <FileText className="w-5 h-5" />
-            <span>Installments</span>
+            <span>Leads</span>
           </Link>
           <Link href="/admin/requests" className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
             <HelpCircle className="w-5 h-5" />

@@ -9,11 +9,11 @@ export default function AdminDashboard() {
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-gray-500 text-sm font-medium">Total Products</p>
-              <h3 className="text-3xl font-bold text-navy mt-1">124</h3>
+              <p className="text-gray-500 text-sm font-medium">Total Leads</p>
+              <h3 className="text-3xl font-bold text-navy mt-1">1,248</h3>
             </div>
             <div className="p-3 bg-blue-50 rounded-lg">
-              <Package className="w-6 h-6 text-electric-blue" />
+              <FileText className="w-6 h-6 text-electric-blue" />
             </div>
           </div>
           <div className="mt-4 flex items-center text-sm">
@@ -25,11 +25,11 @@ export default function AdminDashboard() {
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-gray-500 text-sm font-medium">New Installment Apps</p>
+              <p className="text-gray-500 text-sm font-medium">New Enquiries</p>
               <h3 className="text-3xl font-bold text-navy mt-1">45</h3>
             </div>
             <div className="p-3 bg-green-50 rounded-lg">
-              <FileText className="w-6 h-6 text-success-green" />
+              <HelpCircle className="w-6 h-6 text-success-green" />
             </div>
           </div>
           <div className="mt-4 flex items-center text-sm">
@@ -41,11 +41,11 @@ export default function AdminDashboard() {
         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-gray-500 text-sm font-medium">Product Requests</p>
+              <p className="text-gray-500 text-sm font-medium">Active Creatives</p>
               <h3 className="text-3xl font-bold text-navy mt-1">18</h3>
             </div>
             <div className="p-3 bg-purple-50 rounded-lg">
-              <HelpCircle className="w-6 h-6 text-purple-600" />
+              <Package className="w-6 h-6 text-purple-600" />
             </div>
           </div>
         </div>

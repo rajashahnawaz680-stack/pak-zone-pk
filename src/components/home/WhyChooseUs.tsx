@@ -1,60 +1,68 @@
-import { Shield, Smartphone, CreditCard, MapPin, Headphones, HelpCircle } from "lucide-react";
+import { ShieldCheck, MonitorSmartphone, CreditCard, HeadphonesIcon, MapPin, Handshake } from "lucide-react";
 
 export function WhyChooseUs() {
   const reasons = [
     {
-      icon: Shield,
-      title: "15+ Years of Experience",
-      description: "Serving customers with extensive experience in electronics and installment-based purchasing.",
+      icon: <ShieldCheck className="w-8 h-8 text-electric-blue" />,
+      title: "Experience",
+      description: "15–20 years of trusted business experience in electronics."
     },
     {
-      icon: Smartphone,
+      icon: <MonitorSmartphone className="w-8 h-8 text-electric-blue" />,
       title: "Wide Product Range",
-      description: "Mobiles, laptops, appliances, bikes, scooters, solar systems and more.",
+      description: "From smartphones to appliances, bikes, and solar systems."
     },
     {
-      icon: CreditCard,
-      title: "Cash & Installment Options",
-      description: "Choose the purchasing option that suits your needs and budget.",
+      icon: <CreditCard className="w-8 h-8 text-electric-blue" />,
+      title: "Cash Options",
+      description: "Customers can enquire and purchase directly on cash."
     },
     {
-      icon: MapPin,
-      title: "3 Branches",
-      description: "Convenient access through multiple business locations across the city.",
+      icon: <Handshake className="w-8 h-8 text-electric-blue" />,
+      title: "Installment Options",
+      description: "Available installment options depending on product and applicable terms."
     },
     {
-      icon: Headphones,
-      title: "Customer Support",
-      description: "Get assistance before and after your purchase from our dedicated team.",
+      icon: <HeadphonesIcon className="w-8 h-8 text-electric-blue" />,
+      title: "Direct Support",
+      description: "Speak directly with our knowledgeable team for assistance."
     },
     {
-      icon: HelpCircle,
-      title: "Flexible Product Requests",
-      description: "Ask us about products that are not currently listed online.",
-    },
+      icon: <MapPin className="w-8 h-8 text-electric-blue" />,
+      title: "Multiple Branches",
+      description: "3 branches with centralized contact support across Islamabad."
+    }
   ];
 
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Why Choose Pak Zone Electronics?</h2>
-          <div className="w-24 h-1 bg-electric-blue mx-auto rounded-full"></div>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-block mb-4">
+            <span className="bg-electric-blue/10 text-electric-blue text-sm font-bold px-4 py-2 rounded-full uppercase tracking-widest">
+              Why Pak Zone Electronics
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-navy mb-6">
+            Experience That Customers Can Rely On
+          </h2>
+          <p className="text-gray-600 text-lg">
+            With approximately 15–20 years of experience, Pak Zone Electronics has built its business around quality electronics, exceptional customer service, and convenient purchasing options.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reasons.map((reason, index) => {
-            const Icon = reason.icon;
-            return (
-              <div key={index} className="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors">
-                <div className="w-16 h-16 bg-blue-50 text-electric-blue rounded-full flex items-center justify-center mb-6">
-                  <Icon className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{reason.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{reason.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {reasons.map((reason, index) => (
+            <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100 group">
+              <div className="bg-white w-16 h-16 rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                {reason.icon}
               </div>
-            );
-          })}
+              <h3 className="text-xl font-bold text-navy mb-3">{reason.title}</h3>
+              <p className="text-gray-600 leading-relaxed">
+                {reason.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

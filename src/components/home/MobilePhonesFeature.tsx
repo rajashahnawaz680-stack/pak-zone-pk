@@ -1,74 +1,68 @@
 import Link from "next/link";
-import { MessageCircle, FileText } from "lucide-react";
+import { MessageCircle, Zap } from "lucide-react";
 
 export function MobilePhonesFeature() {
-  const brands = ["iPhone", "Samsung", "Xiaomi", "Oppo", "Vivo", "Tecno", "Infinix", "Other Brands"];
-  
-  // Placeholder mock data
-  const mockPhones = [
-    { id: 1, brand: "Apple", model: "iPhone 15 Pro", specs: "256GB, Titanium", price: "450,000", installment: true },
-    { id: 2, brand: "Samsung", model: "Galaxy S24 Ultra", specs: "512GB, Titanium", price: "400,000", installment: true },
-    { id: 3, brand: "Xiaomi", model: "Redmi Note 13 Pro", specs: "256GB, 8GB RAM", price: "75,000", installment: true },
-    { id: 4, brand: "Infinix", model: "Note 40 Pro", specs: "256GB, 8GB RAM", price: "69,999", installment: true },
-  ];
-
   return (
-    <section className="py-16">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Latest Smartphones</h2>
-            <p className="text-gray-600">Available on Cash or Flexible Installment Options.</p>
+        <div className="bg-navy rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row relative">
+          
+          {/* Abstract Visuals */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-electric-blue opacity-10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+          
+          {/* Content */}
+          <div className="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center relative z-10">
+            <div className="flex items-center space-x-2 mb-6">
+              <Zap className="w-5 h-5 text-electric-blue" />
+              <span className="text-electric-blue font-bold tracking-widest uppercase text-sm">Featured Category</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+              Looking for a New Smartphone?
+            </h2>
+            
+            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+              We offer the latest smartphones from popular brands including Apple, Samsung, and Xiaomi. Contact our team to check current stock and available purchasing options.
+            </p>
+            
+            <ul className="space-y-4 mb-10 text-gray-300">
+              <li className="flex items-center"><span className="w-1.5 h-1.5 bg-electric-blue rounded-full mr-3"></span> Flexible Cash Purchases</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 bg-electric-blue rounded-full mr-3"></span> Convenient Installment Options Available</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 bg-electric-blue rounded-full mr-3"></span> 100% Original Products</li>
+            </ul>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link 
+                href="/installments?category=Mobile%20Phones"
+                className="bg-electric-blue hover:bg-bright-blue text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-colors text-center"
+              >
+                Apply for Installment
+              </Link>
+              <a 
+                href="https://wa.me/923165747971?text=Hello%20Pak%20Zone%20Electronics%2C%20I%20am%20interested%20in%20Mobile%20Phones.%20Please%20send%20me%20available%20options%2C%20prices%20and%20installment%20details."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-success-green hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center shadow-lg transition-colors"
+              >
+                <MessageCircle className="w-5 h-5 mr-2" /> Ask on WhatsApp
+              </a>
+            </div>
           </div>
-          <Link href="/categories/mobile-phones" className="text-electric-blue font-semibold hover:text-bright-blue mt-4 md:mt-0 inline-flex items-center">
-            View All Phones &rarr;
-          </Link>
-        </div>
 
-        {/* Brand filter chips */}
-        <div className="flex overflow-x-auto pb-4 mb-8 space-x-3 hide-scrollbar">
-          {brands.map((brand, idx) => (
-            <button key={idx} className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${idx === 0 ? 'bg-navy text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}>
-              {brand}
-            </button>
-          ))}
-        </div>
-
-        {/* Product Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {mockPhones.map((phone) => (
-            <div key={phone.id} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-              <div className="aspect-[4/5] bg-gray-50 p-6 flex items-center justify-center relative">
-                <div className="absolute top-3 left-3 bg-success-green/10 text-success-green text-xs font-bold px-2 py-1 rounded">
-                  Installment Available
-                </div>
-                {/* Mock image placeholder */}
-                <div className="w-24 h-48 bg-gray-200 rounded-md border-4 border-gray-300 shadow-sm"></div>
-              </div>
-              <div className="p-5 flex flex-col flex-grow">
-                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">{phone.brand}</p>
-                <h3 className="font-bold text-gray-900 text-lg mb-1">{phone.model}</h3>
-                <p className="text-sm text-gray-500 mb-4">{phone.specs}</p>
-                <div className="mt-auto mb-4">
-                  <p className="text-xs text-gray-500 mb-1">Cash Price</p>
-                  <p className="text-xl font-bold text-navy">Rs. {phone.price}</p>
-                </div>
-                <div className="flex flex-col space-y-2 mt-auto">
-                  <Link href={`/installments?product=${encodeURIComponent(phone.model)}`} className="w-full bg-electric-blue hover:bg-bright-blue text-white text-sm font-semibold py-2.5 rounded flex items-center justify-center transition-colors">
-                    <FileText className="w-4 h-4 mr-2" /> Apply for Installment
-                  </Link>
-                  <div className="flex space-x-2">
-                    <button className="flex-1 bg-gray-100 hover:bg-gray-200 text-navy text-sm font-semibold py-2 rounded transition-colors">
-                      Enquire
-                    </button>
-                    <a href={`https://wa.me/923165747971?text=Hi%2C%20I%20am%20interested%20in%20the%20${phone.model}`} target="_blank" rel="noopener noreferrer" className="flex-1 bg-success-green/10 hover:bg-success-green/20 text-success-green text-sm font-semibold py-2 rounded flex items-center justify-center transition-colors">
-                      <MessageCircle className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
+          {/* Visual Creative Area */}
+          <div className="lg:w-1/2 bg-gray-900 relative flex items-center justify-center p-10 min-h-[400px]">
+            {/* Using a premium abstract visual representation instead of a specific product image to avoid showing fixed inventory */}
+            <div className="w-full max-w-sm aspect-[9/16] bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl border-4 border-gray-800 shadow-2xl relative overflow-hidden flex flex-col items-center justify-center">
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+              <div className="w-24 h-6 bg-black rounded-b-xl absolute top-0"></div>
+              
+              <div className="relative z-10 text-center p-6 bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl">
+                <span className="text-white font-bold tracking-widest text-xs uppercase mb-1 block">Prices on</span>
+                <span className="text-electric-blue font-black text-2xl uppercase">Request</span>
               </div>
             </div>
-          ))}
+          </div>
+
         </div>
       </div>
     </section>

@@ -90,10 +90,7 @@ export default function ProductRequestPage() {
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Brand *</label>
                       <input required type="text" className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-electric-blue outline-none" placeholder="e.g. Samsung, HP" />
                     </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Estimated Price (If known)</label>
-                      <input type="number" className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-electric-blue outline-none" placeholder="e.g. 150000" />
-                    </div>
+                    {/* Removed Estimated Price to align with new model */}
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Purchase Type *</label>
                       <select required className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-electric-blue outline-none bg-white">
