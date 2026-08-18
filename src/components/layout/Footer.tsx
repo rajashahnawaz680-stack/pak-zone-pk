@@ -1,64 +1,59 @@
 import Link from "next/link";
-import { Phone, MapPin } from "lucide-react";
+import { Phone, MapPin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-white pt-16 pb-8 border-t border-gray-800">
+    <footer className="bg-navy text-white pt-20 pb-8 border-t border-gray-800 mt-auto">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand Column */}
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          
+          {/* Business Description */}
+          <div className="space-y-6">
             <h3 className="text-2xl font-bold tracking-tight">
               Pak Zone <span className="text-electric-blue">Electronics</span>
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Electronics • Mobiles • Appliances • Bikes • Scooters • Solar
-            </p>
-            <p className="text-gray-400 text-sm leading-relaxed mt-4">
-              Providing premium products and flexible installment options to customers for over 15 years.
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+              Your trusted retail partner with 15-20 years of experience. We provide a premium selection of electronics, home appliances, and mobility solutions backed by professional customer service.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link href="/" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Home</Link></li>
-              <li><Link href="/what-we-offer" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">What We Offer</Link></li>
-              <li><Link href="/installments" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Installments</Link></li>
-              <li><Link href="/how-it-works" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">How It Works</Link></li>
-              <li><Link href="/about" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">About Us</Link></li>
-              <li><Link href="/branches" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Branches</Link></li>
-              <li><Link href="/faq" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">FAQs</Link></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Contact</Link></li>
+          {/* Categories */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-semibold text-white">Categories</h4>
+            <ul className="grid grid-cols-2 gap-3 text-sm">
+              <li><Link href="/category/mobiles" className="text-gray-400 hover:text-electric-blue transition-colors">Mobiles</Link></li>
+              <li><Link href="/category/laptops" className="text-gray-400 hover:text-electric-blue transition-colors">Laptops</Link></li>
+              <li><Link href="/category/bikes" className="text-gray-400 hover:text-electric-blue transition-colors">Bikes</Link></li>
+              <li><Link href="/category/scooters" className="text-gray-400 hover:text-electric-blue transition-colors">Electric Scooters</Link></li>
+              <li><Link href="/category/electronics" className="text-gray-400 hover:text-electric-blue transition-colors">Electronics</Link></li>
+              <li><Link href="/category/home-appliances" className="text-gray-400 hover:text-electric-blue transition-colors">Home Appliances</Link></li>
+              <li><Link href="/category/home-appliances" className="text-gray-400 hover:text-electric-blue transition-colors">LED TVs</Link></li>
+              <li><Link href="/category/home-appliances" className="text-gray-400 hover:text-electric-blue transition-colors">Refrigerators</Link></li>
+              <li><Link href="/category/home-appliances" className="text-gray-400 hover:text-electric-blue transition-colors">Ovens</Link></li>
+              <li><Link href="/category/home-appliances" className="text-gray-400 hover:text-electric-blue transition-colors">Geysers</Link></li>
             </ul>
           </div>
 
-          {/* Customer Support */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Customer Support</h4>
+          {/* Quick Links */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
             <ul className="space-y-3">
-              <li>
-                <a href="tel:03085966696" className="flex items-center space-x-3 text-gray-400 hover:text-electric-blue transition-colors group">
-                  <div className="bg-gray-800 p-2 rounded-full group-hover:bg-electric-blue/20 transition-colors">
-                    <Phone className="w-4 h-4 text-electric-blue" />
-                  </div>
-                  <span className="text-sm">0308 5966696</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://wa.me/923165747971" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 text-gray-400 hover:text-success-green transition-colors group">
-                  <div className="bg-gray-800 p-2 rounded-full group-hover:bg-success-green/20 transition-colors">
-                    <Phone className="w-4 h-4 text-success-green" />
-                  </div>
-                  <span className="text-sm">0316 5747971 (WhatsApp)</span>
-                </a>
-              </li>
+              <li><Link href="/" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Home</Link></li>
+              <li><Link href="/about" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">About Us</Link></li>
+              <li><Link href="/what-we-offer" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Categories</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Contact Us</Link></li>
+              <li><Link href="/privacy-policy" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Terms & Conditions</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-semibold text-white">Visit Our Store</h4>
+            <ul className="space-y-4">
               <li>
                 <div className="flex items-start space-x-3 text-gray-400">
-                  <div className="bg-gray-800 p-2 rounded-full mt-1">
-                    <MapPin className="w-4 h-4 text-electric-blue" />
-                  </div>
+                  <MapPin className="w-5 h-5 text-electric-blue shrink-0 mt-0.5" />
                   <span className="text-sm leading-relaxed">
                     Office No. 23, Emporium Plaza, Lower Ground,<br />
                     Near Pakeeza Cash & Carry, Phase 1<br />
@@ -67,24 +62,26 @@ export function Footer() {
                 </div>
               </li>
               <li>
-                <Link href="/product-request" className="text-electric-blue hover:text-bright-blue transition-colors text-sm font-medium">Request a Product &rarr;</Link>
+                <a href="tel:03085966696" className="flex items-center space-x-3 text-gray-400 hover:text-electric-blue transition-colors">
+                  <Phone className="w-5 h-5 text-electric-blue shrink-0" />
+                  <span className="text-sm">0308 5966696</span>
+                </a>
               </li>
               <li>
-                <Link href="/installments" className="text-electric-blue hover:text-bright-blue transition-colors text-sm font-medium">Apply for Installment &rarr;</Link>
+                <a href="https://wa.me/923165747971" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 text-gray-400 hover:text-success-green transition-colors">
+                  <Phone className="w-5 h-5 text-success-green shrink-0" />
+                  <span className="text-sm">0316 5747971 (WhatsApp)</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@pakzoneelectronics.com" className="flex items-center space-x-3 text-gray-400 hover:text-electric-blue transition-colors">
+                  <Mail className="w-5 h-5 text-electric-blue shrink-0" />
+                  <span className="text-sm">info@pakzoneelectronics.com</span>
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Legal */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Legal</h4>
-            <ul className="space-y-2">
-              <li><Link href="/privacy-policy" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Terms & Conditions</Link></li>
-              <li><Link href="/installment-terms" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Installment Terms</Link></li>
-              <li><Link href="/return-policy" className="text-gray-400 hover:text-electric-blue transition-colors text-sm">Return / Exchange Policy</Link></li>
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Bar */}
@@ -93,8 +90,9 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Pak Zone Electronics. All rights reserved.
           </p>
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
-            <span className="text-gray-500 text-sm font-medium bg-gray-800 px-3 py-1 rounded-full">15+ Years Experience</span>
-            <span className="text-gray-500 text-sm font-medium bg-gray-800 px-3 py-1 rounded-full">3 Branches</span>
+            <span className="text-gray-500 text-xs font-semibold tracking-wider uppercase bg-gray-800/50 px-4 py-2 rounded-lg">
+              15–20 Years Experience
+            </span>
           </div>
         </div>
       </div>

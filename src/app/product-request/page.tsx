@@ -73,8 +73,6 @@ export default function ProductRequestPage() {
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Preferred Branch *</label>
                       <select required className="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-electric-blue outline-none bg-white">
                         <option value="jinnah-garden">Jinnah Garden, Islamabad</option>
-                        <option value="branch-2">Branch 2</option>
-                        <option value="branch-3">Branch 3</option>
                       </select>
                     </div>
                   </div>

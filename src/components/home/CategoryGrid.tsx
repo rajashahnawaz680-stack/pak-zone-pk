@@ -1,99 +1,126 @@
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function CategoryGrid() {
+  const categories = [
+    {
+      id: "mobiles",
+      name: "Mobile Phones",
+      description: "Latest smartphones and communication devices.",
+      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1000&auto=format&fit=crop",
+      colSpan: "md:col-span-2 lg:col-span-2",
+      rowSpan: "md:row-span-2 lg:row-span-2",
+    },
+    {
+      id: "laptops",
+      name: "Laptops & Computers",
+      description: "Work, study, and professional computing.",
+      image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=1000&auto=format&fit=crop",
+      colSpan: "md:col-span-2 lg:col-span-1",
+      rowSpan: "md:row-span-1 lg:row-span-1",
+    },
+    {
+      id: "bikes",
+      name: "Bikes / Motorcycles",
+      description: "Premium mobility and daily commute solutions.",
+      image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=1000&auto=format&fit=crop",
+      colSpan: "md:col-span-2 lg:col-span-1",
+      rowSpan: "md:row-span-1 lg:row-span-1",
+    },
+    {
+      id: "scooters",
+      name: "Electric Scooters",
+      description: "Modern urban EV mobility.",
+      image: "https://images.unsplash.com/photo-1589408235688-6f772fc810d7?q=80&w=1000&auto=format&fit=crop",
+      colSpan: "md:col-span-2 lg:col-span-1",
+      rowSpan: "md:row-span-1 lg:row-span-1",
+    },
+    {
+      id: "electronics",
+      name: "Electronics & Accessories",
+      description: "Smart devices, audio, and daily tech essentials.",
+      image: "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?q=80&w=1000&auto=format&fit=crop",
+      colSpan: "md:col-span-2 lg:col-span-1",
+      rowSpan: "md:row-span-1 lg:row-span-1",
+    },
+    {
+      id: "home-appliances", // Link to a general appliance page or a specific one
+      name: "LED TVs",
+      description: "Home entertainment and displays.",
+      image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=1000&auto=format&fit=crop",
+      colSpan: "md:col-span-1 lg:col-span-1",
+      rowSpan: "md:row-span-1 lg:row-span-1",
+    },
+    {
+      id: "home-appliances",
+      name: "Refrigerators",
+      description: "Cooling and food preservation.",
+      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop",
+      colSpan: "md:col-span-1 lg:col-span-1",
+      rowSpan: "md:row-span-1 lg:row-span-1",
+    },
+    {
+      id: "home-appliances",
+      name: "Ovens",
+      description: "Kitchen appliances and baking.",
+      image: "https://images.unsplash.com/photo-1584269600519-112d091fb343?q=80&w=1000&auto=format&fit=crop",
+      colSpan: "md:col-span-1 lg:col-span-1",
+      rowSpan: "md:row-span-1 lg:row-span-1",
+    },
+    {
+      id: "home-appliances",
+      name: "Geysers",
+      description: "Water heating solutions.",
+      image: "https://images.unsplash.com/photo-1628189874597-9e63473956dc?q=80&w=1000&auto=format&fit=crop",
+      colSpan: "md:col-span-1 lg:col-span-1",
+      rowSpan: "md:row-span-1 lg:row-span-1",
+    }
+  ];
+
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="categories" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy mb-4">Explore What We Offer</h2>
-          <p className="text-gray-600 text-lg">
-            From everyday electronics to major purchases, explore the categories available through Pak Zone Electronics.
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl md:text-5xl font-black text-navy mb-4">Shop By Category</h2>
+            <p className="text-gray-600 text-lg">
+              Explore our comprehensive range of technology, mobility, and home appliances. 
+              Find exactly what you need in our professional showroom.
+            </p>
+          </div>
         </div>
 
-        {/* Editorial Magazine Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 lg:gap-6 h-auto md:h-[600px]">
-          
-          {/* Large Card: Mobile Phones */}
-          <div className="md:col-span-1 md:row-span-2 group relative rounded-2xl overflow-hidden bg-gradient-to-b from-gray-900 to-navy shadow-lg aspect-[3/4] md:aspect-auto">
-            <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/50 transition-colors"></div>
-            {/* Background Image Placeholder */}
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1598327105666-5b89351cb31b?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-700"></div>
-            
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-6 lg:p-8">
-              <span className="text-xs font-bold tracking-widest text-electric-blue uppercase mb-2">Smartphones</span>
-              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-3">Upgrade Your Everyday</h3>
-              <p className="text-gray-200 text-sm mb-6 max-w-xs">Smartphones from popular brands with cash and available installment options.</p>
-              <div className="flex flex-col gap-3">
-                <Link href="/installments?category=Mobile%20Phones" className="w-full bg-white text-navy hover:bg-gray-100 font-bold py-3 px-4 rounded-lg text-center transition-colors text-sm">
-                  Enquire Now
-                </Link>
-                <a href="https://wa.me/923165747971?text=Hello%20Pak%20Zone%20Electronics%2C%20I%20am%20interested%20in%20Mobile%20Phones.%20Please%20send%20me%20the%20available%20options%2C%20current%20price%20and%20installment%20details." target="_blank" rel="noopener noreferrer" className="w-full bg-success-green/20 hover:bg-success-green/30 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center transition-colors text-sm border border-success-green/30">
-                  <MessageCircle className="w-4 h-4 mr-2" /> Ask on WhatsApp
-                </a>
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px]">
+          {categories.map((category, index) => (
+            <Link 
+              key={index}
+              href={`/category/${category.id}`} 
+              className={`group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 bg-navy ${category.colSpan} ${category.rowSpan}`}
+            >
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors z-10 duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent z-10"></div>
+              
+              <div 
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                style={{ backgroundImage: `url('${category.image}')` }}
+              ></div>
+              
+              <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-20">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
+                  {category.name}
+                </h3>
+                <p className="text-gray-200 text-sm sm:text-base font-medium mb-4 max-w-sm">
+                  {category.description}
+                </p>
+                <div className="flex items-center text-electric-blue font-bold text-sm uppercase tracking-wider group-hover:text-white transition-colors">
+                  Explore Category <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                </div>
               </div>
-            </div>
-          </div>
-
-          {/* Medium Card 1: Laptops */}
-          <div className="md:col-span-1 md:row-span-1 group relative rounded-2xl overflow-hidden bg-gradient-to-r from-gray-800 to-gray-900 shadow-lg aspect-video md:aspect-auto">
-            <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/50 transition-colors"></div>
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-700"></div>
-            
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-6">
-              <span className="text-xs font-bold tracking-widest text-electric-blue uppercase mb-1">Laptops</span>
-              <h3 className="text-2xl font-bold text-white mb-2">Power Your Work & Study</h3>
-              <div className="mt-4 flex gap-2">
-                <Link href="/installments?category=Laptops" className="bg-white text-navy hover:bg-gray-100 font-bold py-2 px-4 rounded-lg text-xs transition-colors">Ask for Details</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Medium Card 2: Home Appliances */}
-          <div className="md:col-span-1 md:row-span-1 group relative rounded-2xl overflow-hidden bg-gradient-to-br from-blue-900 to-navy shadow-lg aspect-video md:aspect-auto">
-            <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/50 transition-colors"></div>
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-700"></div>
-            
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-6">
-              <span className="text-xs font-bold tracking-widest text-electric-blue uppercase mb-1">Home Appliances</span>
-              <h3 className="text-2xl font-bold text-white mb-2">Upgrade Your Living Space</h3>
-              <div className="mt-4 flex gap-2">
-                <Link href="/installments?category=Home%20Appliances" className="bg-white text-navy hover:bg-gray-100 font-bold py-2 px-4 rounded-lg text-xs transition-colors">Explore Options</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Small Card 1: Bikes & Scooters */}
-          <div className="md:col-span-1 md:row-span-1 group relative rounded-2xl overflow-hidden bg-gradient-to-tr from-gray-900 to-gray-800 shadow-lg aspect-video md:aspect-auto">
-            <div className="absolute inset-0 bg-black/50 z-10 group-hover:bg-black/60 transition-colors"></div>
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-700"></div>
-            
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-6">
-              <span className="text-[10px] font-bold tracking-widest text-electric-blue uppercase mb-1">Bikes & Scooters</span>
-              <h3 className="text-xl font-bold text-white mb-1">Ride With Flexible Options</h3>
-              <div className="mt-3">
-                <Link href="/installments?category=Bikes" className="inline-block bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-1.5 px-4 rounded-lg text-xs transition-colors border border-white/20">Enquire Now</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Small Card 2: Solar */}
-          <div className="md:col-span-1 md:row-span-1 group relative rounded-2xl overflow-hidden bg-gradient-to-b from-orange-900/80 to-navy shadow-lg aspect-video md:aspect-auto">
-            <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/50 transition-colors"></div>
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509391366360-1f9509ce158a?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-70 group-hover:scale-105 transition-transform duration-700"></div>
-            
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-6">
-              <span className="text-[10px] font-bold tracking-widest text-orange-400 uppercase mb-1">Solar Solutions</span>
-              <h3 className="text-xl font-bold text-white mb-1">Power Your Home</h3>
-              <div className="mt-3">
-                <Link href="/installments?category=Solar" className="inline-block bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold py-1.5 px-4 rounded-lg text-xs transition-colors border border-white/20">Discuss Requirements</Link>
-              </div>
-            </div>
-          </div>
-
+            </Link>
+          ))}
         </div>
+
       </div>
     </section>
   );

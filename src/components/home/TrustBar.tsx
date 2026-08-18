@@ -1,42 +1,45 @@
-import { ShieldCheck, MapPin, Grid, Handshake } from "lucide-react";
+import { Grid, ShieldCheck, MapPin, HeadphonesIcon, ThumbsUp } from "lucide-react";
 
 export function TrustBar() {
   const trustItems = [
     {
-      icon: <ShieldCheck className="w-8 h-8 text-electric-blue" />,
-      title: "15–20 Years",
-      subtitle: "Experience"
+      icon: <Grid className="w-6 h-6 text-electric-blue" />,
+      title: "Wide Product Range",
+      subtitle: "Electronics & Mobility"
     },
     {
-      icon: <MapPin className="w-8 h-8 text-electric-blue" />,
-      title: "3 Branches",
-      subtitle: "Multiple Locations"
+      icon: <MapPin className="w-6 h-6 text-electric-blue" />,
+      title: "Trusted Local Store",
+      subtitle: "Visit Our Showroom"
     },
     {
-      icon: <Grid className="w-8 h-8 text-electric-blue" />,
-      title: "Wide Range",
-      subtitle: "Electronics & More"
+      icon: <ThumbsUp className="w-6 h-6 text-electric-blue" />,
+      title: "Quality Products",
+      subtitle: "Premium Selection"
     },
     {
-      icon: <Handshake className="w-8 h-8 text-electric-blue" />,
-      title: "Cash + Installments",
-      subtitle: "Available Options"
+      icon: <HeadphonesIcon className="w-6 h-6 text-electric-blue" />,
+      title: "Professional Support",
+      subtitle: "Expert Guidance"
+    },
+    {
+      icon: <ShieldCheck className="w-6 h-6 text-electric-blue" />,
+      title: "Convenient Shopping",
+      subtitle: "Easy Store Experience"
     }
   ];
 
   return (
-    <div className="bg-white border-b border-gray-200">
+    <div className="bg-white border-b border-gray-100 shadow-sm relative z-30 -mt-6 mx-4 rounded-xl md:mx-auto max-w-7xl">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 divide-x-0 md:divide-x divide-gray-100">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {trustItems.map((item, index) => (
-            <div key={index} className="flex flex-col md:flex-row items-center text-center md:text-left justify-center md:justify-start md:px-8 space-y-3 md:space-y-0 md:space-x-4">
-              <div className="flex-shrink-0 bg-blue-50 p-3 rounded-full">
+            <div key={index} className="flex flex-col items-center text-center px-4">
+              <div className="mb-3 bg-blue-50 p-3 rounded-full">
                 {item.icon}
               </div>
-              <div>
-                <h4 className="font-bold text-navy text-lg">{item.title}</h4>
-                <p className="text-sm text-gray-500 font-medium">{item.subtitle}</p>
-              </div>
+              <h3 className="text-navy font-bold text-sm md:text-base">{item.title}</h3>
+              <p className="text-gray-500 text-xs mt-1">{item.subtitle}</p>
             </div>
           ))}
         </div>

@@ -10,24 +10,6 @@ export default function BranchesPage() {
       whatsapp: "0316 5747971",
       hours: "Mon - Sat: 10:00 AM - 10:00 PM",
       isMain: true
-    },
-    {
-      id: 2,
-      name: "Branch 2",
-      address: "Address will be updated soon.",
-      phone: "0308 5966696",
-      whatsapp: "0316 5747971",
-      hours: "Mon - Sat: 10:00 AM - 10:00 PM",
-      isMain: false
-    },
-    {
-      id: 3,
-      name: "Branch 3",
-      address: "Address will be updated soon.",
-      phone: "0308 5966696",
-      whatsapp: "0316 5747971",
-      hours: "Mon - Sat: 10:00 AM - 10:00 PM",
-      isMain: false
     }
   ];
 
@@ -36,13 +18,13 @@ export default function BranchesPage() {
       <div className="container mx-auto px-4">
         
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-navy mb-4">Our Branches</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-navy mb-4">Our Store</h1>
           <p className="text-lg text-gray-600">
-            Visit any of our 3 locations across the city to explore our products and discuss installment options with our team.
+            Visit our physical showroom in Islamabad to explore our premium products and receive professional consultation from our team.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="max-w-2xl mx-auto">
           {branches.map((branch) => (
             <div key={branch.id} className={`bg-white rounded-2xl shadow-lg border overflow-hidden flex flex-col ${branch.isMain ? 'border-electric-blue shadow-electric-blue/10 ring-1 ring-electric-blue' : 'border-gray-200'}`}>
               
@@ -55,32 +37,32 @@ export default function BranchesPage() {
                 </div>
               </div>
 
-              <div className="p-6 flex flex-col flex-grow space-y-6">
+              <div className="p-8 flex flex-col flex-grow space-y-6">
                 
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-6 h-6 text-electric-blue flex-shrink-0 mt-1" />
-                  <p className="text-gray-700 leading-relaxed">{branch.address}</p>
+                  <p className="text-gray-700 leading-relaxed text-lg">{branch.address}</p>
                 </div>
                 
                 <div className="flex items-start space-x-3">
                   <Phone className="w-6 h-6 text-electric-blue flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-gray-900 font-semibold">{branch.phone}</p>
-                    <p className="text-gray-500 text-sm">WhatsApp: {branch.whatsapp}</p>
+                    <p className="text-gray-900 font-semibold text-lg">{branch.phone}</p>
+                    <p className="text-gray-500">WhatsApp: {branch.whatsapp}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3">
                   <Clock className="w-6 h-6 text-electric-blue flex-shrink-0 mt-0.5" />
-                  <p className="text-gray-700 font-medium">{branch.hours}</p>
+                  <p className="text-gray-700 font-medium text-lg">{branch.hours}</p>
                 </div>
 
-                <div className="mt-auto pt-6">
+                <div className="mt-auto pt-8">
                   <a 
                     href={`https://maps.google.com/?q=${encodeURIComponent(branch.address)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full bg-gray-100 hover:bg-gray-200 text-navy font-bold py-3 rounded-lg flex items-center justify-center transition-colors"
+                    className="w-full bg-electric-blue hover:bg-bright-blue text-white font-bold py-4 rounded-xl flex items-center justify-center transition-colors shadow-md"
                   >
                     <Navigation className="w-5 h-5 mr-2" /> Get Directions
                   </a>

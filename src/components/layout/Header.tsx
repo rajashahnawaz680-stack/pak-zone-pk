@@ -1,42 +1,62 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, PhoneCall, Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, MapPin } from "lucide-react";
 import { useState } from "react";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-navy text-white shadow-md">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold text-white tracking-tight">
+        <Link href="/" className="flex items-center space-x-2 shrink-0">
+          <span className="text-xl md:text-2xl font-bold text-white tracking-tight">
             Pak Zone <span className="text-electric-blue">Electronics</span>
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-6">
+        <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
           <Link href="/" className="hover:text-electric-blue transition-colors text-sm font-medium">Home</Link>
-          <Link href="/what-we-offer" className="hover:text-electric-blue transition-colors text-sm font-medium">What We Offer</Link>
-          <Link href="/installments" className="hover:text-electric-blue transition-colors text-sm font-medium">Installments</Link>
-          <Link href="/how-it-works" className="hover:text-electric-blue transition-colors text-sm font-medium">How It Works</Link>
           <Link href="/about" className="hover:text-electric-blue transition-colors text-sm font-medium">About Us</Link>
-          <Link href="/branches" className="hover:text-electric-blue transition-colors text-sm font-medium">Branches</Link>
-          <Link href="/faq" className="hover:text-electric-blue transition-colors text-sm font-medium">FAQs</Link>
-          <Link href="/contact" className="hover:text-electric-blue transition-colors text-sm font-medium">Contact</Link>
+          
+          {/* Categories Dropdown */}
+          <div 
+            className="relative group"
+            onMouseEnter={() => setIsCategoryOpen(true)}
+            onMouseLeave={() => setIsCategoryOpen(false)}
+          >
+            <button className="flex items-center hover:text-electric-blue transition-colors text-sm font-medium py-2">
+              Categories <ChevronDown className="w-4 h-4 ml-1" />
+            </button>
+            
+            {isCategoryOpen && (
+              <div className="absolute top-full left-0 w-48 bg-white text-navy shadow-xl rounded-b-lg overflow-hidden border-t-2 border-electric-blue animate-in slide-in-from-top-2">
+                <Link href="/category/mobiles" className="block px-4 py-3 hover:bg-gray-50 text-sm border-b border-gray-100">Mobiles</Link>
+                <Link href="/category/laptops" className="block px-4 py-3 hover:bg-gray-50 text-sm border-b border-gray-100">Laptops</Link>
+                <Link href="/category/bikes" className="block px-4 py-3 hover:bg-gray-50 text-sm border-b border-gray-100">Bikes</Link>
+                <Link href="/category/scooters" className="block px-4 py-3 hover:bg-gray-50 text-sm border-b border-gray-100">Electric Scooters</Link>
+                <Link href="/category/electronics" className="block px-4 py-3 hover:bg-gray-50 text-sm border-b border-gray-100">Electronics</Link>
+                <Link href="/category/home-appliances" className="block px-4 py-3 hover:bg-gray-50 text-sm">Home Appliances</Link>
+              </div>
+            )}
+          </div>
+          
+          <Link href="/category/mobiles" className="hover:text-electric-blue transition-colors text-sm font-medium hidden xl:block">Mobiles</Link>
+          <Link href="/category/laptops" className="hover:text-electric-blue transition-colors text-sm font-medium hidden xl:block">Laptops</Link>
+          <Link href="/category/bikes" className="hover:text-electric-blue transition-colors text-sm font-medium hidden xl:block">Bikes</Link>
+          <Link href="/category/home-appliances" className="hover:text-electric-blue transition-colors text-sm font-medium hidden xl:block">Appliances</Link>
+          <Link href="/contact" className="hover:text-electric-blue transition-colors text-sm font-medium">Contact Us</Link>
         </nav>
 
         {/* Desktop CTAs */}
-        <div className="hidden lg:flex items-center space-x-4">
-          <a href="tel:03085966696" className="flex items-center space-x-2 hover:text-electric-blue transition-colors">
-            <PhoneCall className="w-5 h-5 text-electric-blue" />
-            <span className="text-sm font-semibold">0308 5966696</span>
-          </a>
-          <Link href="/installments" className="bg-electric-blue hover:bg-bright-blue text-white px-5 py-2.5 rounded-md font-semibold text-sm transition-colors shadow-sm">
-            Apply for Installment
+        <div className="hidden lg:flex items-center space-x-4 shrink-0">
+          <Link href="/contact" className="bg-electric-blue hover:bg-bright-blue text-white px-5 py-2.5 rounded-md font-semibold text-sm transition-colors shadow-sm flex items-center">
+            <MapPin className="w-4 h-4 mr-2" />
+            Visit Our Store
           </Link>
         </div>
 
@@ -52,28 +72,26 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-navy border-t border-gray-800">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <Link href="/" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-            <Link href="/what-we-offer" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>What We Offer</Link>
-            <Link href="/installments" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Installments</Link>
-            <Link href="/how-it-works" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>How It Works</Link>
-            <Link href="/about" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-            <Link href="/branches" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Branches</Link>
-            <Link href="/faq" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>FAQs</Link>
-            <Link href="/contact" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+        <div className="lg:hidden bg-navy border-t border-gray-800 absolute w-full left-0 shadow-xl h-screen overflow-y-auto pb-32">
+          <div className="container mx-auto px-4 py-6 flex flex-col space-y-5">
+            <Link href="/" className="text-white hover:text-electric-blue text-lg font-medium border-b border-gray-800 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+            <Link href="/about" className="text-white hover:text-electric-blue text-lg font-medium border-b border-gray-800 pb-2" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
             
-            <div className="pt-4 border-t border-gray-800 flex flex-col space-y-3">
-              <a href="tel:03085966696" className="flex items-center space-x-2 text-white">
-                <PhoneCall className="w-5 h-5 text-electric-blue" />
-                <span>Call: 0308 5966696</span>
-              </a>
-              <a href="https://wa.me/923165747971" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white">
-                <Phone className="w-5 h-5 text-success-green" />
-                <span>WhatsApp: 0316 5747971</span>
-              </a>
-              <Link href="/installments" className="bg-electric-blue text-center text-white px-4 py-2.5 rounded-md font-semibold mt-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Apply for Installment
+            <div className="text-gray-400 text-sm font-bold uppercase tracking-wider mt-4">Shop Categories</div>
+            <div className="flex flex-col space-y-4 pl-4 border-l-2 border-gray-800">
+              <Link href="/category/mobiles" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Mobile Phones</Link>
+              <Link href="/category/laptops" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Laptops & Computers</Link>
+              <Link href="/category/bikes" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Bikes / Motorcycles</Link>
+              <Link href="/category/scooters" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Electric Scooters</Link>
+              <Link href="/category/electronics" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Electronics & Accessories</Link>
+              <Link href="/category/home-appliances" className="text-white hover:text-electric-blue" onClick={() => setIsMobileMenuOpen(false)}>Home Appliances</Link>
+            </div>
+
+            <Link href="/contact" className="text-white hover:text-electric-blue text-lg font-medium border-b border-gray-800 pb-2 pt-4" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+            
+            <div className="pt-6 flex flex-col space-y-3">
+              <Link href="/contact" className="bg-electric-blue text-center text-white px-4 py-3 rounded-lg font-bold shadow-md" onClick={() => setIsMobileMenuOpen(false)}>
+                Visit Our Store
               </Link>
             </div>
           </div>
